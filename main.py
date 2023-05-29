@@ -1,15 +1,34 @@
 import streamlit as st
-st.header("Welcome to my first app!")
 
-col1,col2 = st.columns(2)
+# Add a heading to the page
+st.title("Business Solution Provider")
+# Initialize the UI with 2 columns
+
+col1, col2 = st.columns(2)
 
 with col1:
-    st.write("lhs")
-
+        st.markdown("Can't find the solution to your problem holding your business back? Don't worry we got you!")
 
 with col2:
-    st.markdown("## Hi")
-    st.write("rhs")
+
+        st.image(image="graphic.jpeg",width=300)
+
+st.markdown("###  Enter some details:")
+
+col3,col4 = st.columns(2)
+
+with col3:
+    business = st.text_input(label="",placeholder="Business Category")
+
+with col4:
+    problem = st.text_input(label="",placeholder="Problem")
+
+
+
+
+
+
+
 
 
 #sidebar
