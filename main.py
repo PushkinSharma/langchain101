@@ -1,8 +1,11 @@
 import streamlit as st
 
-# Add a heading to the page
 st.title("Business Solution Provider")
-# Initialize the UI with 2 columns
+
+with st.sidebar:
+     st.header("Made By: Pushkin Sharma")
+     st.write("My first langchain project")
+
 
 col1, col2 = st.columns(2)
 
