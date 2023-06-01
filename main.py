@@ -1,4 +1,11 @@
 import streamlit as st
+import langchain
+import openai
+import os
+
+template = """  """
+
+#prompt = PromptTemplate(input_variables=[],template = template)
 
 st.title("Business Solution Provider")
 
@@ -23,10 +30,11 @@ st.markdown("###  Enter some information:")
 col1,col2 = st.columns(2)
 
 with col1:
-    business = st.text_input(label="",placeholder="Business Category")
+    business = st.text_input(label="Business Category:",placeholder="Finance")
+
 
 with col2:
-    problem = st.text_input(label="",placeholder="Problem")
+    problem = st.text_input(label="Problem:",placeholder="Insufficient leads")
 
 
 st.markdown("### Solution:")
