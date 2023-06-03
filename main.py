@@ -38,14 +38,16 @@ with st.sidebar:
      st.header("Langchain Overview: :parrot::link: ")
      st.markdown("LangChain is a software development framework designed to simplify the creation of applications using large language models.")
      st.header("Made By: :red[Pushkin Sharma]")
-     st.write("This is my first Langchain project. I'm attempting to solve a very basic problem here.")
+     st.write("This is my first Langchain project. I'm just starting out and getting to know the basics!")
 
 
 
 col1, col2 = st.columns(2)
 
 with col1:
-        st.markdown("Can't find the solution to the problem holding your business back? Don't worry I got you! Just enter some basic information and we will provide you with a detailed solution.")
+        st.markdown("Are you struggling to solve a problem in your business? Do you need help finding a solution? If so, then this problem-solving app is for you!")
+        st.write(" ")
+        st.markdown("Our app uses :red[artificial intelligence] to analyze your business and the problem you are facing. It then generates a list of possible solutions, along with step-by-step instructions on how to implement them.")
 
 with col2:
         st.image(image="vecteezy_illustration-vector-graphic-cartoon-character-of-business_5482438.jpg",width=300)
