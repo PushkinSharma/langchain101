@@ -35,10 +35,10 @@ llm = load_llm()
 st.title("Business Solution Provider")
 
 with st.sidebar:
-     st.header("Langchain Overview: :parrot::link: ")
-     st.markdown("LangChain is a software development framework designed to simplify the creation of applications using large language models.")
-     st.header("Made By: :red[Pushkin Sharma]")
-     st.write("This is my first Langchain project. I'm just starting out and getting to know the basics!")
+     st.header(":red[Langchain] Overview: :parrot::link: ")
+     st.markdown("[LangChain](https://python.langchain.com/en/latest/index.html) is a software development framework designed to simplify the creation of applications using large language models.")
+     st.header("Made By: [Pushkin Sharma](https://www.linkedin.com/in/pushkinsharma/)")
+     st.write("This is my first Langchain project. I'm just starting out and getting to know the basics.Connect with me on LinkedIn and let's build more fun projects like this!")
 
 
 
