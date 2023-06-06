@@ -5,30 +5,29 @@ from langchain.llms import OpenAI
 import openai
 import os
 
-load_dotenv()
-api_key = os.environ.get('OPENAI_API_KEY')
+#load_dotenv()
+#api_key = os.environ.get('OPENAI_API_KEY')
 
 
 
-template = """ HI
+# template = """ HI
+#
+#  business = {biz}
+#
+#  problem = {prob}
+#
+#
+#
+#  """
 
- business = {biz}
+#prompt = PromptTemplate(input_variables=["biz","prob"],template = template)
 
- problem = {prob}
-
-
-
-
- """
-
-prompt = PromptTemplate(input_variables=["biz","prob"],template = template)
-
-def load_llm():
-
-    llm = OpenAI(temperature=0.5)
-    return llm
-
-llm = load_llm()
+# def load_llm():
+#
+#     llm = OpenAI(temperature=0.5)
+#     return llm
+#
+# llm = load_llm()
 
 
 
@@ -38,7 +37,7 @@ with st.sidebar:
      st.header(":red[Langchain] Overview: :parrot::link: ")
      st.markdown("[LangChain](https://python.langchain.com/en/latest/index.html) is a software development framework designed to simplify the creation of applications using large language models.")
      st.header("Made By: [Pushkin Sharma](https://www.linkedin.com/in/pushkinsharma/)")
-     st.write("This is my first Langchain project. I'm just starting out and getting to know the basics.Connect with me on LinkedIn and let's build more fun projects like this!")
+     st.write("This is my first Langchain project. I'm just starting out and getting to know the basics. Connect with me on LinkedIn and let's build more fun projects like this!")
 
 
 
@@ -76,14 +75,42 @@ with col2:
     problem_input = get_problem()
 
 
+api_key = st.text_input(":red[Enter your OpenAI API key]")
+if api_key:
+
+    # Set the OpenAI API key
+    openai.api_key = api_key
+    prompt_template = "As a business in the {category} category, my problem is: {problem}."
+    if st.button("Generate Answer"):
+
+        # Replace the template variables in the prompt template
+        prompt = prompt_template.format(category=business_input, problem=problem_input)
+
+        # Call the OpenAI API to generate the answer
+        response = openai.Completion.create(
+                engine="text-davinci-003",
+                prompt=prompt,
+                max_tokens=100,
+                n=1,
+                stop=None,
+            )
+
+        # Display the generated answer
+        st.write("Generated Answer:")
+        st.write(response.choices[0].text.strip())
+# else:
+#     st.write("Please enter your OpenAI API key")
+
+
+
 st.markdown("### Solution:")
 
-if business_input and problem_input:
+# if business_input and problem_input:
 
 
-    answer = llm(prompt.format(biz=business_input,prob=problem_input))
+    #answer = llm(prompt.format(biz=business_input,prob=problem_input))
     #st.text_area(label="",value=answer)
-    st.write(answer)
+    # st.write(answer)
     #st.write(prompt.format(biz=business_input,prob=problem_input))
 
 st.write("")
