@@ -1,3 +1,3 @@
-# langchain101
+# Business Solution Provider
 
-An attempt to build a simple app which uses ChatGPT to solve your business problems! 
+A simple app built using Langchain and OpenAI API which solves your business problems! 
